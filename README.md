@@ -73,7 +73,7 @@ All `paper` results up to 16 bits are optimal under the column-sweep order. A* (
 | 14 | | | 1,473 | | prover | 8,381,274 | 5.8 min | |
 | 15 | | | 1,701 | | prover | 13,388,150 | 12.6 min | |
 | 16 | 2,024 | 1,940 | 1,946 | 1,944 (beam) | prover | 19,479,263 | 21.9 min | 1,843.9 |
-| 32 | 8,462 | 8,195 | 8,083 (beam) | 8,082 (beam) | beam, B = 300 | 18,005,980 | 5.3 min | 7,886.8 |
+| 32 | 8,462 | 8,195 | 8,083 (beam) | 8,081 | beam, B = 300 | 18,005,980 | 5.3 min | 7,886.8 |
 
 For A*, the states column counts the stored states. For the prover, it counts the expanded states; each state is expanded once. The prover also confirms 1,065 at 12 bits with 3.1 million expanded states in 91 s, against 10.3 minutes for A*.
 
