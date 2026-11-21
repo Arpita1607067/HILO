@@ -4,3 +4,7 @@ bin/
 __pycache__/
 results_new/
 runs/
+row_mapping/matrices/
+row_mapping/*.py
+row_mapping/executed.ipynb
+row_mapping/.ipynb_checkpoints/

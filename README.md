@@ -203,6 +203,7 @@ hilo/
 │   ├── verify_sequence.py          — replays a sequence and checks its final state and cost
 │   └── collect_results.py          — collects the outputs into results.csv
 ├── lp_prices/                      — lambda_hilo_nN.txt (stored for 8, 10, 12, 16, 32; others made on demand)
+├── row_mapping/                    — in-row mapping: latency / energy / area of y = A·x (own README)
 ├── tools/msvc/                     — Windows build without g++ (build.bat, bits/stdc++.h stand-in)
 ├── bin/                            — built executables
 ├── runs/                           — output of BITS=… runs (one folder per run)
