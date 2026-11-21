@@ -1,0 +1,4 @@
+n=8 goal=relaxed variables=141,202 LP bound=395.92 (0.9s)
+n=12 goal=relaxed variables=243,234 LP bound=986.99 (1.7s)
+n=16 goal=relaxed variables=345,266 LP bound=1840.87 (2.6s)
+n=32 goal=relaxed variables=753,394 LP bound=7883.82 (7.9s)

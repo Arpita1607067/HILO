@@ -1,0 +1,4 @@
+n=2 goal=relaxed placement=any por=0 cost=9 pops=3 states=3 time=0.00s
+n=3 goal=relaxed placement=any por=0 cost=39 pops=58 states=98 time=0.00s
+n=4 goal=relaxed placement=any por=0 cost=87 pops=1802 states=4029 time=0.01s
+n=5 goal=relaxed placement=any por=0 cost=150 pops=75811 states=191640 time=5.46s

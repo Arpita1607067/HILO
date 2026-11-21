@@ -1,0 +1,32 @@
+n=16 goal=relaxed bound=1943 root_bound=1841 threads=8 lambda=yes
+  column  1:          1 states,          1 expanded, live       132 states (0.01 GB), best none, t=0s
+  column  2:       1223 states,       1223 expanded, live      3828 states (0.01 GB), best none, t=0s
+  column  3:      27344 states,      27344 expanded, live     44735 states (0.01 GB), best none, t=0s
+  column  4:     124535 states,     124535 expanded, live    158244 states (0.01 GB), best none, t=1s
+  column  5:     252754 states,     252754 expanded, live    302822 states (0.01 GB), best none, t=2s
+  column  6:     411362 states,     411362 expanded, live    480035 states (0.02 GB), best none, t=3s
+  column  7:     600108 states,     600108 expanded, live    689377 states (0.02 GB), best none, t=7s
+  column  8:     814127 states,     814127 expanded, live    923973 states (0.03 GB), best none, t=12s
+  column  9:    1008963 states,    1008963 expanded, live   1135205 states (0.03 GB), best none, t=18s
+  column 10:    1196748 states,    1196748 expanded, live   1333292 states (0.03 GB), best none, t=26s
+  column 11:    1306345 states,    1306345 expanded, live   1441093 states (0.03 GB), best none, t=35s
+  column 12:    1309678 states,    1309678 expanded, live   1435106 states (0.03 GB), best none, t=43s
+  column 13:    1222081 states,    1222081 expanded, live   1328761 states (0.03 GB), best none, t=52s
+  column 14:     971302 states,     971302 expanded, live   1048791 states (0.03 GB), best none, t=58s
+  column 15:     623435 states,     623435 expanded, live    670319 states (0.02 GB), best none, t=61s
+  column 16:     326473 states,     326473 expanded, live    352304 states (0.01 GB), best none, t=63s
+  column 17:     153305 states,     153305 expanded, live    170025 states (0.01 GB), best none, t=63s
+  column 18:      85418 states,      85418 expanded, live     96323 states (0.00 GB), best none, t=64s
+  column 19:      46999 states,      46999 expanded, live     53671 states (0.00 GB), best none, t=64s
+  column 20:      23376 states,      23376 expanded, live     26953 states (0.00 GB), best none, t=64s
+  column 21:       9560 states,       9560 expanded, live     11293 states (0.00 GB), best none, t=64s
+  column 22:       4449 states,       4449 expanded, live      5369 states (0.00 GB), best none, t=64s
+  column 23:       1854 states,       1854 expanded, live      2336 states (0.00 GB), best none, t=64s
+  column 24:        494 states,        494 expanded, live       619 states (0.00 GB), best none, t=64s
+  column 25:        120 states,        120 expanded, live       160 states (0.00 GB), best none, t=64s
+  column 26:         45 states,         45 expanded, live        55 states (0.00 GB), best none, t=64s
+  column 27:          8 states,          8 expanded, live        10 states (0.00 GB), best none, t=64s
+  column 29:          1 states,          1 expanded, live         2 states (0.00 GB), best none, t=64s
+  column 30:          1 states,          1 expanded, live         2 states (0.00 GB), best none, t=64s
+  column 31:          1 states,          1 expanded, live         1 states (0.00 GB), best none, t=64s
+n=16 goal=relaxed RESULT: no solution with cost <= 1943 (optimum >= 1944). expanded=10522110 peak_live=1441093 states (0.03 GB) time=64.5s

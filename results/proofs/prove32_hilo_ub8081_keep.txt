@@ -1,0 +1,118 @@
+n=32 goal=relaxed bound=8081 root_bound=7884 threads=24 lambda=yes
+  column  1:          1 states,          1 expanded, live       132 states (0.01 GB), best none, t=0s
+  column  2:       1223 states,       1223 expanded, live      3828 states (0.01 GB), best none, t=0s
+  column  3:      28584 states,      28584 expanded, live     51348 states (0.01 GB), best none, t=0s
+  column  4:     281219 states,     281219 expanded, live    390246 states (0.02 GB), best none, t=1s
+  column  5:    1083990 states,    1083990 expanded, live   1297438 states (0.04 GB), best none, t=3s
+  column  6:    2173663 states,    2173663 expanded, live   2492367 states (0.07 GB), best none, t=9s
+  column  7:    3520080 states,    3520080 expanded, live   3961421 states (0.12 GB), best none, t=20s
+  column  8:    5278540 states,    5278540 expanded, live   5861187 states (0.12 GB), best none, t=38s
+  column  9:    7391749 states,    7391749 expanded, live   8128164 states (0.23 GB), best none, t=67s
+  column 10:    9995085 states,    9995085 expanded, live  10899611 states (0.24 GB), best none, t=116s
+  column 11:   12930504 states,   12930504 expanded, live  14018952 states (0.44 GB), best none, t=194s
+  column 12:   16191332 states,   16191332 expanded, live  17472509 states (0.44 GB), best none, t=304s
+  column 13:   19868829 states,   19868829 expanded, live  21354395 states (0.44 GB), best none, t=459s
+  column 14:   23618204 states,   23618204 expanded, live  25318107 states (0.87 GB), best none, t=649s
+  column 15:   27536348 states,   27536348 expanded, live  29446746 states (0.87 GB), best none, t=886s
+  column 16:   31812936 states,   31812936 expanded, live  33954549 states (0.87 GB), best none, t=1174s
+  column 17:   36692326 states,   36692326 expanded, live  39040316 states (0.87 GB), best none, t=1533s
+  column 18:   40589202 states,   40589202 expanded, live  43113174 states (0.87 GB), best none, t=1952s
+  column 19:   44517461 states,   44517461 expanded, live  47188031 states (0.87 GB), best none, t=2483s
+  column 20:   48039146 states,   48039146 expanded, live  50828815 states (1.67 GB), best none, t=3035s
+  column 21:   51245053 states,   51245053 expanded, live  54127735 states (1.67 GB), best none, t=3614s
+  column 22:   53930612 states,   53930612 expanded, live  56851431 states (1.67 GB), best none, t=4210s
+  column 23:   55538123 states,   55538123 expanded, live  58441155 states (1.67 GB), best none, t=4827s
+  column 24:   55862389 states,   55862389 expanded, live  58678264 states (1.67 GB), best none, t=5452s
+  column 25:   55156574 states,   55156574 expanded, live  57881391 states (1.67 GB), best none, t=6064s
+  column 26:   54700603 states,   54700603 expanded, live  57292591 states (1.67 GB), best none, t=6654s
+  column 27:   52273806 states,   52273806 expanded, live  54674845 states (1.67 GB), best none, t=7252s
+  column 28:   49611433 states,   49611433 expanded, live  51832892 states (1.67 GB), best none, t=7813s
+  column 29:   47104161 states,   47104161 expanded, live  49164449 states (1.66 GB), best none, t=8332s
+  column 30:   43217659 states,   43217659 expanded, live  45068041 states (0.86 GB), best none, t=8785s
+  column 31:   38129158 states,   38129158 expanded, live  39692831 states (0.86 GB), best none, t=9160s
+  column 32:   30135322 states,   30135322 expanded, live  31417687 states (0.84 GB), best none, t=9418s
+  column 33:   23782396 states,   23782396 expanded, live  24937876 states (0.84 GB), best none, t=9601s
+  column 34:   20915463 states,   20915463 expanded, live  21964157 states (0.43 GB), best none, t=9753s
+  column 35:   18041074 states,   18041074 expanded, live  18955547 states (0.43 GB), best none, t=9875s
+  column 36:   15148976 states,   15148976 expanded, live  15941452 states (0.43 GB), best none, t=9971s
+  column 37:   12448501 states,   12448501 expanded, live  13119638 states (0.42 GB), best none, t=10041s
+  column 38:    9858556 states,    9858556 expanded, live  10425226 states (0.22 GB), best none, t=10091s
+  column 39:    8152538 states,    8152538 expanded, live   8619019 states (0.22 GB), best none, t=10130s
+  column 40:    6438623 states,    6438623 expanded, live   6838747 states (0.22 GB), best none, t=10157s
+  column 41:    5071705 states,    5071705 expanded, live   5392303 states (0.11 GB), best none, t=10176s
+  column 42:    3815181 states,    3815181 expanded, live   4064470 states (0.11 GB), best none, t=10190s
+  column 43:    2771424 states,    2771424 expanded, live   2962556 states (0.06 GB), best none, t=10199s
+  column 44:    1990051 states,    1990051 expanded, live   2138669 states (0.06 GB), best none, t=10204s
+  column 45:    1431148 states,    1431148 expanded, live   1541338 states (0.03 GB), best none, t=10208s
+  column 46:     983078 states,     983078 expanded, live   1062994 states (0.03 GB), best none, t=10210s
+  column 47:     649355 states,     649355 expanded, live    705856 states (0.02 GB), best none, t=10212s
+  column 48:     406037 states,     406037 expanded, live    443286 states (0.02 GB), best none, t=10213s
+  column 49:     237559 states,     237559 expanded, live    262235 states (0.01 GB), best none, t=10213s
+  column 50:     137141 states,     137141 expanded, live    152730 states (0.01 GB), best none, t=10214s
+  column 51:      72149 states,      72149 expanded, live     81156 states (0.00 GB), best none, t=10214s
+  column 52:      33004 states,      33004 expanded, live     37777 states (0.00 GB), best none, t=10214s
+  column 53:      15870 states,      15870 expanded, live     18551 states (0.00 GB), best none, t=10214s
+  column 54:       7237 states,       7237 expanded, live      8595 states (0.00 GB), best none, t=10214s
+  column 55:       2774 states,       2774 expanded, live      3434 states (0.00 GB), best none, t=10214s
+  column 56:        770 states,        770 expanded, live       971 states (0.00 GB), best none, t=10214s
+  column 57:        193 states,        193 expanded, live       273 states (0.00 GB), best none, t=10214s
+  column 58:         84 states,         84 expanded, live       107 states (0.00 GB), best none, t=10214s
+  column 59:         17 states,         16 expanded, live        23 states (0.00 GB), best 8081, t=10214s
+  column 60:          3 states,          0 expanded, live         6 states (0.00 GB), best 8081, t=10214s
+  column 61:          2 states,          1 expanded, live         3 states (0.00 GB), best 8081, t=10214s
+  column 62:          1 states,          1 expanded, live         2 states (0.00 GB), best 8081, t=10214s
+  column 63:          1 states,          1 expanded, live         1 states (0.00 GB), best 8081, t=10214s
+n=32 goal=relaxed RESULT: optimum = 8081 (bound was 8081). expanded=1050866221 peak_live=58678264 states (1.67 GB) time=10214.2s
+execution sequence (cost 8081):
+   adder (2,3) W=4 cost=20 at column 1
+   adder (5,1) W=3 cost=28 at column 3
+   adder (6,7,7) W=6 cost=131 at column 4
+   adder (9,2) W=4 cost=63 at column 7
+   adder (9) W=4 cost=49 at column 8
+   adder (11,8,8) W=6 cost=178 at column 9
+   adder (3,6,6) W=6 cost=83 at column 9
+   adder (15,8,6) W=6 cost=193 at column 12
+   adder (9,2) W=4 cost=63 at column 13
+   adder (11,4) W=5 cost=90 at column 14
+   adder (15,8,8) W=6 cost=207 at column 15
+   adder (13,7) W=5 cost=128 at column 16
+   adder (7) W=3 cost=36 at column 17
+   adder (23,7,3) W=6 cost=230 at column 18
+   adder (17,7) W=5 cost=158 at column 19
+   adder (15,8,3) W=6 cost=171 at column 20
+   adder (17,7,3) W=6 cost=179 at column 21
+   adder (17,9,7) W=6 cost=223 at column 22
+   adder (17,7) W=5 cost=158 at column 23
+   adder (15,6) W=5 cost=136 at column 24
+   adder (25,7,1) W=6 cost=227 at column 25
+   adder (25,7,1) W=6 cost=227 at column 26
+   adder (25,7,2) W=6 cost=233 at column 27
+   adder (25,7,4,1) W=6 cost=255 at column 28
+   adder (25,7,4) W=6 cost=249 at column 29
+   adder (25,7,4,1) W=6 cost=255 at column 30
+   adder (25,7,4,1) W=6 cost=255 at column 31
+   adder (25,13,1,1) W=6 cost=281 at column 32
+   adder (17,7) W=5 cost=158 at column 33
+   adder (25,7,4,1) W=6 cost=255 at column 34
+   adder (25,3) W=5 cost=191 at column 35
+   adder (25,13,3) W=6 cost=288 at column 36
+   adder (17,9,7) W=6 cost=223 at column 37
+   adder (17,7,4,2) W=6 cost=200 at column 38
+   adder (15,8) W=5 cost=150 at column 39
+   adder (15,8) W=5 cost=150 at column 40
+   adder (17,9,7) W=6 cost=223 at column 41
+   adder (17,7) W=5 cost=158 at column 42
+   adder (11,6,2) W=5 cost=118 at column 43
+   adder (17,7) W=5 cost=158 at column 44
+   adder (13,7,7,1) W=6 cost=184 at column 45
+   adder (15,8) W=5 cost=150 at column 46
+   adder (5,1) W=3 cost=28 at column 47
+   adder (17,7) W=5 cost=158 at column 48
+   adder (11,2) W=4 cost=77 at column 49
+   adder (15) W=4 cost=93 at column 50
+   adder (15,8,8) W=6 cost=207 at column 51
+   adder (7,4) W=4 cost=61 at column 52
+   adder (11,6,6,2) W=6 cost=159 at column 54
+   adder (5,3,3,1) W=5 cost=62 at column 55
+   adder (3,6,6,3) W=6 cost=104 at column 57
+   adder (3,2) W=3 cost=20 at column 61

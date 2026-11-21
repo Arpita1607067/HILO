@@ -1,0 +1,37 @@
+n=12 goal=relaxed bound=1063 root_bound=987 threads=24 lambda=yes
+  column  1:          1 states,          1 expanded, live       132 states (0.00 GB), best none, t=0s
+  column  2:       1223 states,       1223 expanded, live      3828 states (0.00 GB), best none, t=0s
+  column  3:      20735 states,      20735 expanded, live     31063 states (0.00 GB), best none, t=0s
+  column  4:      63922 states,      63922 expanded, live     81123 states (0.01 GB), best none, t=0s
+  column  5:     112448 states,     112448 expanded, live    136772 states (0.01 GB), best none, t=1s
+  column  6:     168152 states,     168152 expanded, live    199543 states (0.01 GB), best none, t=1s
+  column  7:     224613 states,     224613 expanded, live    261719 states (0.01 GB), best none, t=1s
+  column  8:     270240 states,     270240 expanded, live    308136 states (0.01 GB), best none, t=2s
+  column  9:     269198 states,     269198 expanded, live    302763 states (0.01 GB), best none, t=2s
+  column 10:     216920 states,     216920 expanded, live    240195 states (0.01 GB), best none, t=3s
+  column 11:     129340 states,     129340 expanded, live    141327 states (0.01 GB), best none, t=3s
+  column 12:      49753 states,      49753 expanded, live     54667 states (0.00 GB), best none, t=3s
+  column 13:      15439 states,      15439 expanded, live     17969 states (0.00 GB), best none, t=3s
+  column 14:       6866 states,       6866 expanded, live      8190 states (0.00 GB), best none, t=3s
+  column 15:       2760 states,       2760 expanded, live      3425 states (0.00 GB), best none, t=3s
+  column 16:        782 states,        782 expanded, live       983 states (0.00 GB), best none, t=3s
+  column 17:        193 states,        193 expanded, live       273 states (0.00 GB), best none, t=3s
+  column 18:         84 states,         84 expanded, live       107 states (0.00 GB), best none, t=3s
+  column 19:         17 states,         15 expanded, live        23 states (0.00 GB), best 1063, t=3s
+  column 20:          3 states,          0 expanded, live         6 states (0.00 GB), best 1063, t=3s
+  column 21:          2 states,          1 expanded, live         3 states (0.00 GB), best 1063, t=3s
+  column 22:          1 states,          1 expanded, live         2 states (0.00 GB), best 1063, t=3s
+  column 23:          1 states,          1 expanded, live         1 states (0.00 GB), best 1063, t=3s
+n=12 goal=relaxed RESULT: optimum = 1063 (bound was 1063). expanded=1552687 peak_live=308136 states (0.01 GB) time=3.2s
+execution sequence (cost 1063):
+   adder (2,3,3) W=5 cost=38 at column 1
+   adder (2,6,7,1) W=6 cost=95 at column 3
+   adder (7,3) W=4 cost=55 at column 6
+   adder (7,1,4,4) W=6 cost=94 at column 7
+   adder (11,8,8) W=6 cost=178 at column 8
+   adder (14,8,8) W=6 cost=202 at column 11
+   adder (6,4) W=4 cost=56 at column 12
+   adder (11,6,6,2) W=6 cost=159 at column 14
+   adder (5,3,3,1) W=5 cost=62 at column 15
+   adder (3,6,6,3) W=6 cost=104 at column 17
+   adder (3,2) W=3 cost=20 at column 21

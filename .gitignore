@@ -1,0 +1,6 @@
+bin/
+*.exe
+*.obj
+__pycache__/
+results_new/
+runs/

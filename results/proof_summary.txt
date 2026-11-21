@@ -1,0 +1,5 @@
+n=16 goal=relaxed RESULT: no solution with cost <= 1943 (optimum >= 1944). expanded=10522110 peak_live=1441093 states (0.03 GB) time=64.5s
+n=16: the beam result 1944 is optimal
+n=32 goal=relaxed RESULT: optimum = 8081 (bound was 8082). expanded=1086793162 peak_live=60472615 states (1.67 GB) time=9686.2s
+n=32 goal=relaxed RESULT: optimum = 8081 (bound was 8081). expanded=1050866221 peak_live=58678264 states (1.67 GB) time=10214.2s
+n=32: optimum 8081, below the beam result 8082

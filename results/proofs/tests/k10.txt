@@ -1,0 +1,31 @@
+n=10 goal=relaxed bound=720 root_bound=659 threads=24 lambda=yes
+  column  1:          1 states,          1 expanded, live       132 states (0.00 GB), best none, t=0s
+  column  2:       1223 states,       1223 expanded, live      3769 states (0.00 GB), best none, t=0s
+  column  3:      14506 states,      14506 expanded, live     20991 states (0.00 GB), best none, t=0s
+  column  4:      36160 states,      36160 expanded, live     46367 states (0.00 GB), best none, t=0s
+  column  5:      57920 states,      57920 expanded, live     71255 states (0.00 GB), best none, t=0s
+  column  6:      78499 states,      78499 expanded, live     93604 states (0.00 GB), best none, t=1s
+  column  7:      89231 states,      89231 expanded, live    103467 states (0.00 GB), best none, t=1s
+  column  8:      72773 states,      72773 expanded, live     82243 states (0.00 GB), best none, t=1s
+  column  9:      39330 states,      39330 expanded, live     43720 states (0.00 GB), best none, t=1s
+  column 10:      13134 states,      13134 expanded, live     14585 states (0.00 GB), best none, t=1s
+  column 11:       2965 states,       2965 expanded, live      3644 states (0.00 GB), best none, t=1s
+  column 12:        932 states,        932 expanded, live      1192 states (0.00 GB), best none, t=1s
+  column 13:        234 states,        234 expanded, live       298 states (0.00 GB), best none, t=1s
+  column 14:         70 states,         70 expanded, live        89 states (0.00 GB), best none, t=1s
+  column 15:         15 states,         12 expanded, live        19 states (0.00 GB), best 720, t=1s
+  column 16:          2 states,          0 expanded, live         4 states (0.00 GB), best 720, t=1s
+  column 17:          1 states,          0 expanded, live         2 states (0.00 GB), best 720, t=1s
+  column 18:          1 states,          1 expanded, live         2 states (0.00 GB), best 720, t=1s
+  column 19:          1 states,          1 expanded, live         1 states (0.00 GB), best 720, t=1s
+n=10 goal=relaxed RESULT: optimum = 720 (bound was 720). expanded=406992 peak_live=103467 states (0.00 GB) time=1.2s
+execution sequence (cost 720):
+   adder (2,3) W=4 cost=20 at column 1
+   adder (5,1) W=3 cost=28 at column 3
+   adder (6,7,7) W=6 cost=131 at column 4
+   adder (9,2) W=4 cost=63 at column 7
+   adder (9,2) W=4 cost=63 at column 8
+   adder (11,6,6,2) W=6 cost=159 at column 9
+   adder (6,4,4,4) W=6 cost=106 at column 10
+   adder (3,4,7,3) W=6 cost=96 at column 12
+   adder (3,4,3,1) W=5 cost=54 at column 15

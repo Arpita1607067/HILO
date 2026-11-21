@@ -1,0 +1,4 @@
+n=5 goal=relaxed w=1.000 cost=150 pops=3536 states=8625 time=0.06s root_bound=115
+   adder (2) W=2 cost=5 at column 1
+   adder (4,4,5,2) W=6 cost=91 at column 2
+   adder (3,4,3,1) W=5 cost=54 at column 5

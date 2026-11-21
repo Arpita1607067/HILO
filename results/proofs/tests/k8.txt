@@ -1,0 +1,21 @@
+n=8 goal=relaxed bound=442 root_bound=396 threads=24 lambda=yes
+  column  1:          1 states,          1 expanded, live       132 states (0.00 GB), best none, t=0s
+  column  2:       1216 states,       1216 expanded, live      2978 states (0.00 GB), best none, t=0s
+  column  3:       7365 states,       7365 expanded, live     10605 states (0.00 GB), best none, t=0s
+  column  4:      14864 states,      14864 expanded, live     19269 states (0.00 GB), best none, t=0s
+  column  5:      19075 states,      19075 expanded, live     23203 states (0.00 GB), best none, t=0s
+  column  6:      16327 states,      16327 expanded, live     19079 states (0.00 GB), best none, t=0s
+  column  7:       7772 states,       7772 expanded, live      8747 states (0.00 GB), best none, t=0s
+  column  8:       1671 states,       1671 expanded, live      1854 states (0.00 GB), best none, t=0s
+  column  9:        164 states,        164 expanded, live       208 states (0.00 GB), best none, t=0s
+  column 10:         67 states,         67 expanded, live        92 states (0.00 GB), best none, t=1s
+  column 11:         23 states,         21 expanded, live        25 states (0.00 GB), best 442, t=1s
+  column 12:          2 states,          0 expanded, live         2 states (0.00 GB), best 442, t=1s
+n=8 goal=relaxed RESULT: optimum = 442 (bound was 442). expanded=68543 peak_live=23203 states (0.00 GB) time=0.5s
+execution sequence (cost 442):
+   adder (2,3) W=4 cost=20 at column 1
+   adder (5,1) W=3 cost=28 at column 3
+   adder (6,7,7) W=6 cost=131 at column 4
+   adder (9,6,2) W=5 cost=105 at column 7
+   adder (3,6,6,3) W=6 cost=104 at column 8
+   adder (3,4,3,1) W=5 cost=54 at column 11
