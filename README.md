@@ -1,6 +1,7 @@
 # HILO: minimum-cost adder trees for n-bit multipliers
 
-HILO finds the cheapest way to reduce the product space of an n-bit multiplication to one bit per column, using the adder library in `lookuptable_with_weights.csv`. It proves optimality and checks every result. It runs for **any bit width from 2 bits up**. Optimal results for 2 to 12, 16, and 32 bits are included.
+HILO framework finds exact synthesis of in-memory multiplication by a column-sweep order, in which every adder is placed at the
+lowest column that holds two or more bits. Under this order, each state fits in a 64-bit word, and the state graph is acyclic. HILO exploits these properties using lower bounds from linear programming (LP) and a bounded dynamic program (DP) that expands every state once It proves optimality and checks every result. It runs for **any bit width from 2 bits up**. Optimal results for 2 to 12, 16, and 32 bits are included.
 
 ---
 
