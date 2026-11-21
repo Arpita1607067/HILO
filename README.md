@@ -73,54 +73,6 @@ Sample terminal output for `BITS=8`:
 
 ---
 
-## Running any bit width
-
-`BITS` chooses the widths. The script picks the steps for each width:
-
-| Width | Exact A* | Beam + prover | LP bound | No-order check | Rough time |
-|---|:-:|:-:|:-:|:-:|---|
-| 2 – 5 | ✓ | ✓ | ✓ | ✓ | seconds |
-| 6 – 12 | ✓ | ✓ | ✓ | | 1 s (6 bits) to 7 min (12 bits), one core |
-| 13 – 16 | | ✓ | ✓ | | 13 bits: 17 s in all. 16 bits: 13 s beam + 65 s proof, 8 threads |
-| 32 | | ✓ | ✓ | | 2.5 min beam + **2.7 h proof on 24 threads, 1.7 GB** |
-
-For each width the prover runs with U = beam cost - 1:
-
-- `no solution with cost <= U` → the beam result is **optimal**. `proof_summary.txt` says `the beam result X is optimal`.
-- `optimum = X` → a cheaper solution exists. X is the optimum, and its adder list goes to `sequences/nNN_hilo_prover.txt`.
-
-At 12 bits and below, the exact A* and the prover must agree. This doubles as a self-test.
-
-Widths without stored prices (only 8, 10, 12, 16, and 32 are stored) need SciPy. The script computes the prices once and saves them to `lp_prices/lambda_hilo_nN.txt` for the next run.
-
-**Reproduce the stored results.** Without `BITS`, the script works on `results/`. It skips every result that already exists, so it only reruns the cheap checks:
-
-```bash
-sh run_hilo.sh                                      # check results/ (a few seconds)
-OUT=results_new sh run_hilo.sh                      # recompute 2–12, 16, 32 bits (about 20 min + 1 min proof)
-OUT=results_new PROVE32=1 sh run_hilo.sh            # also the 32-bit proof (hours, many cores, several GB)
-```
-
-**Key options** (environment variables; the two optional arguments are the lookup table and the thread count):
-
-| Variable | Default | Description |
-|---|---|---|
-| `BITS` | – | Widths to run, for example `8` or `"13 14 15"`. Sets the lists below. |
-| `OUT` | `runs/nN` with `BITS`, else `results` | Output folder. Existing results in it are skipped. |
-| `NOBUILD` | – | `1` = use the executables in `bin/` and do not compile |
-| `PY` | `python3`, else `python` | Python interpreter |
-| `CXX` | `g++` | C++ compiler |
-| `EXACT_NS` | `2 … 12` | Widths for exact A* |
-| `BEAM_NS` | `16 32` | Widths for beam search |
-| `PROVE_NS` | `16` | Widths for the prover. The beam result is made first if it is missing. |
-| `PROVE32` | – | `1` = add 32 to `PROVE_NS` |
-| `LP_NS` | `8 12 16 32` | Widths for the LP lower bound |
-| `ANY_NS` | `2 3 4 5` | Widths for the no-order check (very slow above 5 bits) |
-
-The lists can be combined freely, for example `OUT=runs/beam20 EXACT_NS= BEAM_NS=20 PROVE_NS= LP_NS=20 ANY_NS= sh run_hilo.sh` runs only beam search and the LP bound for 20 bits.
-
----
-
 ## Single programs
 
 The solvers can also be run by hand. Each prints a header line with the cost, states, time and root lower bound, then one line per adder.
@@ -202,32 +154,28 @@ The results are optimal under the column-sweep order. `hilo_any`, which places a
 
 ## Results
 
-Stored in `results/`:
+Optimal decompositions and search effort:
 
-| Bits | AUTO | HILO optimum | Adders | Method | States | Time | LP bound |
-|---:|---:|---:|---:|---|---:|---:|---:|
-| 2 | | 9 | 1 | A* | 3 | <0.1 s | |
-| 3 | 44 | 39 | 1 | A* | 49 | <0.1 s | |
-| 4 | 97 | 87 | 2 | A* | 815 | <0.1 s | |
-| 5 | 164 | 150 | 3 | A* | 8,625 | <0.1 s | |
-| 6 | 264 | 230 | 4 | A* | 44,056 | 0.3 s | |
-| 7 | | 328 | 5 | A* | 151,484 | 2.4 s | |
-| 8 | 478 | 442 | 5 | A* | 397,654 | 10 s | 395.9 |
-| 9 | | 572 | 7 | A* | 878,770 | 36 s | |
-| 10 | | 720 | 9 | A* | 1,853,443 | 1.2 min | |
-| 11 | | 884 | 10 | A* | 3,537,471 | 3.3 min | |
-| 12 | | 1,063 | 11 | A* | 6,023,031 | 7.0 min | 987.0 |
-| 16 | 2,024 | 1,944 | 18 | beam + prover | 10,522,110 | 65 s (8 threads) | 1,840.9 |
-| 32 | 8,462 | 8,081 | 52 | prover | 1,086,793,162 | 2.7 h (24 threads) | 7,883.8 |
+| n | Optimum | LP bound | Adders | A\* time (s) | Algorithm 1 expanded | Algorithm 1 peak | Algorithm 1 time (s) |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| 2 | 9 | 9 | 1 | <0.1 | 0 | 1 | <0.1 |
+| 3 | 39 | 30 | 1 | <0.1 | 12 | 11 | <0.1 |
+| 4 | 87 | 69 | 2 | <0.1 | 208 | 192 | <0.1 |
+| 5 | 150 | 126 | 3 | <0.1 | 1.3k | 749 | <0.1 |
+| 6 | 230 | 200 | 4 | 0.1 | 5.0k | 2.6k | <0.1 |
+| 7 | 328 | 290 | 5 | 0.8 | 20.2k | 9.0k | 0.1 |
+| 8 | 442 | 396 | 5 | 4.0 | 60.9k | 20.9k | 0.3 |
+| 9 | 572 | 520 | 7 | 13.8 | 148k | 43.0k | 0.8 |
+| 10 | 720 | 659 | 9 | 51.0 | 372k | 95.2k | 3.1 |
+| 11 | 884 | 815 | 10 | 150 | 804k | 182k | 7.9 |
+| 12 | 1,063 | 987 | 11 | 354 | 1.44M | 290k | 17.3 |
+| 13 | 1,258 | 1,176 | 14 | – | 2.58M | 461k | 38.9 |
+| 14 | 1,471 | 1,382 | 15 | – | 4.27M | 707k | 71.4 |
+| 15 | 1,699 | 1,603 | 17 | – | 7.10M | 1.06M | 136 |
+| 16 | 1,944 | 1,841 | 18 | – | 10.5M | 1.44M | 227 |
+| 32 | 8,081 | 7,884 | 50 | – | 1.09B | 60.5M | 10,214‡ |
 
-- All costs are optimal under the column-sweep order. 13 to 15 bits are not stored; run them with `BITS="13 14 15" sh run_hilo.sh`.
-- AUTO is the greedy synthesis: Table 4 of the draft for 3 to 6 bits, Table IV of the AUTO paper for 8 to 32 bits. It is a reference value.
-- For A*, the states column counts the stored states. For the prover, it counts the expanded states.
-- The A* times are on one core of a 2-core cloud machine. The 16-bit proof ran on an Intel Core Ultra 7 256V, the 32-bit proof on a 24-thread machine.
-
-**16 bits.** Beam search gives 1,944 operations with 18 adders in 13 s. The prover with U = 1,943 finds no solution, so 1,944 is optimal (`results/proofs/prove16_hilo.txt`). It expanded 10.5 million states and kept at most 1.4 million (0.03 GB) in memory.
-
-**32 bits.** Beam search gives 8,082 operations with 51 adders in 2.5 min. The prover with U = 8,082 finds a solution with 8,081 operations, which is the optimum (`results/proofs/prove32_hilo_ub8082.txt`). It expanded 1.09 billion states and kept at most 60 million (1.67 GB) in memory. A second run with U = 8,081 and `--keep` recovered the 52 adders of this solution (`results/proofs/prove32_hilo_ub8081_keep.txt`, `results/sequences/n32_hilo_prover.txt`).
+Algorithm 1 is the prover (`hilo_prove`). Expanded and peak count the states it expands and the most states it holds at once. ‡ Multi-threaded run.
 
 ### Checks
 
