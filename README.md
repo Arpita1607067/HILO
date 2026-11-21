@@ -186,6 +186,36 @@ Algorithm 1 is the prover (`hilo_prove`). Expanded and peak count the states it 
 
 ---
 
+## In-row mapping evaluation
+
+The folder `row_mapping/` evaluates a 32-bit matrix-vector multiplication y = A·x on 512 × 512 MAGIC crossbars, with several dot-product terms per crossbar row (dense row mapping, shared x slot and working cells, tree reduction, PREP SET, hierarchical links). It compares ULTRA, SIMPLER, LOGIC, AUTO and HILO on 15 SuiteSparse matrices.
+
+| File | Content |
+|---|---|
+| `row_mapping/hilo_shared_row_mapping.ipynb` | The whole evaluation. Run the cells from top to bottom. |
+| `row_mapping/lookuptable_with_functional_cells.csv` | Adder library with the functional cells of each adder. |
+
+**Run** (Python 3 with `numpy scipy pandas matplotlib jinja2 jupyter`; about 2 minutes, most of it downloading the 15 matrices):
+
+```bash
+pip install numpy scipy pandas matplotlib jinja2 jupyter
+cd row_mapping
+jupyter nbconvert --to notebook --execute hilo_shared_row_mapping.ipynb --output executed.ipynb
+```
+
+The notebook can also be opened in Jupyter or Google Colab and run with Run All. The parameters (crossbar size, precision, SET mode, link model) are in its first code cell.
+
+**Result.** HILO improvement over the 15 benchmarks (positive % = HILO is lower):
+
+| Metric | ULTRA | SIMPLER | LOGIC | AUTO | HILO | HILO vs ULTRA (%) | HILO vs ULTRA (x) | HILO vs SIMPLER (%) | HILO vs SIMPLER (x) | HILO vs LOGIC (%) | HILO vs LOGIC (x) | HILO vs AUTO (%) | HILO vs AUTO (x) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Latency, geometric mean (norm. to ULTRA) | 1.0000 | 0.6946 | 0.6049 | 0.4875 | 0.4645 | 53.55 | 2.1529 | 33.13 | 1.4954 | 23.21 | 1.3023 | 4.73 | 1.0496 |
+| Latency, total of 15 MVMs (us) | 2266961.1810 | 1574497.6060 | 1371137.6680 | 1105054.1430 | 1052844.3290 | 53.56 | 2.1532 | 33.13 | 1.4955 | 23.21 | 1.3023 | 4.72 | 1.0496 |
+| Energy, geometric mean (norm. to ULTRA) | 1.0000 | 0.0482 | 0.0219 | 0.0180 | 0.0169 | 98.31 | 59.1114 | 64.90 | 2.8488 | 22.83 | 1.2958 | 5.79 | 1.0615 |
+| Energy, total of 15 MVMs (uJ) | 2724416.2915 | 130150.5568 | 58381.5491 | 47817.7271 | 45046.6100 | 98.35 | 60.4799 | 65.39 | 2.8892 | 22.84 | 1.2960 | 5.80 | 1.0615 |
+
+---
+
 ## Project layout
 
 ```
@@ -203,7 +233,7 @@ hilo/
 │   ├── verify_sequence.py          — replays a sequence and checks its final state and cost
 │   └── collect_results.py          — collects the outputs into results.csv
 ├── lp_prices/                      — lambda_hilo_nN.txt (stored for 8, 10, 12, 16, 32; others made on demand)
-├── row_mapping/                    — in-row mapping: latency / energy / area of y = A·x (own README)
+├── row_mapping/                    — in-row mapping evaluation (notebook + lookup table with functional cells)
 ├── tools/msvc/                     — Windows build without g++ (build.bat, bits/stdc++.h stand-in)
 ├── bin/                            — built executables
 ├── runs/                           — output of BITS=… runs (one folder per run)
