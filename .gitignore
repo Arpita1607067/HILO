@@ -8,3 +8,8 @@ row_mapping/matrices/
 row_mapping/*.py
 row_mapping/executed.ipynb
 row_mapping/.ipynb_checkpoints/
+row_mapping/executed*.ipynb
+row_mapping/*.csv
+!row_mapping/lookuptable_with_functional_cells.csv
+row_mapping/*.png
+row_mapping/*.pdf

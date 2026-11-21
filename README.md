@@ -3,6 +3,8 @@
 HILO framework finds exact synthesis of in-memory multiplication by a column-sweep order, in which every adder is placed at the
 lowest column that holds two or more bits. Under this order, each state fits in a 64-bit word, and the state graph is acyclic. HILO exploits these properties using lower bounds from linear programming (LP) and a bounded dynamic program (DP) that expands every state once It proves optimality and checks every result. It runs for **any bit width from 2 bits up**. Optimal results for 2 to 12, 16, and 32 bits are included.
 
+![Overview of HILO: inputs, column sweep, lower bounds, beam search, bounded DP, output](docs/overview.png)
+
 ---
 
 ## Install
@@ -195,6 +197,7 @@ The folder `row_mapping/` evaluates a 32-bit matrix-vector multiplication y = A�
 |---|---|
 | `row_mapping/hilo_shared_row_mapping.ipynb` | The whole evaluation. Run the cells from top to bottom. |
 | `row_mapping/lookuptable_with_functional_cells.csv` | Adder library with the functional cells of each adder. |
+| `row_mapping/hilo_final_latency_and_energy.ipynb` | Latency and energy of HILO vs AUTO with one term per row, and the reduction with each technique's own adders (`reduction_eval.py`). It also uses `../lookuptable_with_weights.csv`. About 5 minutes. |
 
 **Run** (Python 3 with `numpy scipy pandas matplotlib jinja2 jupyter`; about 2 minutes, most of it downloading the 15 matrices):
 
@@ -202,6 +205,7 @@ The folder `row_mapping/` evaluates a 32-bit matrix-vector multiplication y = A�
 pip install numpy scipy pandas matplotlib jinja2 jupyter
 cd row_mapping
 jupyter nbconvert --to notebook --execute hilo_shared_row_mapping.ipynb --output executed.ipynb
+jupyter nbconvert --to notebook --execute hilo_final_latency_and_energy.ipynb --output executed_final.ipynb
 ```
 
 The notebook can also be opened in Jupyter or Google Colab and run with Run All. The parameters (crossbar size, precision, SET mode, link model) are in its first code cell.
@@ -235,6 +239,7 @@ hilo/
 │   └── collect_results.py          — collects the outputs into results.csv
 ├── lp_prices/                      — lambda_hilo_nN.txt (stored for 8, 10, 12, 16, 32; others made on demand)
 ├── row_mapping/                    — in-row mapping evaluation (notebook + lookup table with functional cells)
+├── docs/overview.png               — overview figure
 ├── tools/msvc/                     — Windows build without g++ (build.bat, bits/stdc++.h stand-in)
 ├── bin/                            — built executables
 ├── runs/                           — output of BITS=… runs (one folder per run)
